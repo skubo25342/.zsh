@@ -5,10 +5,10 @@ export LANG=ja_JP.UTF-8
 # Terminal title
 case "${TERM}" in
     kterm*|xterm*|)
-	precmd() {
-	    echo -ne "\033]0;${USER}@${HOST%%.*}\007"
-	}
-	;;
+    precmd() {
+        echo -ne "\033]0;${USER}@${HOST%%.*}\007"
+    }
+    ;;
 esac
 
 
@@ -21,15 +21,15 @@ colors
 local p_cdir="%B%F{green}[%~]%f%b"$'\n'
 local p_info="%F{cyan}%n@%m%f"
 local p_mark="%B%(?,%F{green},%F{red})%(!,#,>)%f%b"
-PROMPT="$p_cdir$p_info $p_mark "
-PROMPT2="(%_) $p_mark "
+PROMPT="${p_cdir}${p_info} ${p_mark} "
+PROMPT2="(%_) ${p_mark} "
 #RPROMPT="%{${fg[green]}%}[%~]%{${reset_color}%}"
 SPROMPT="%F{yellow}correct: %R -> %r ? [Yes, No, Abort, Edit]:%f"
 setopt transient_rprompt
 
 
 ## History
-HISTFILE=$ZDOTDIR/.zsh_history
+HISTFILE=${ZDOTDIR}/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
 setopt bang_hist
@@ -57,13 +57,13 @@ zstyle ":completion:*" matcher-list "m:{a-z}={A-Z}"
 
 
 # Load .zshrc_*
-if [ -f $ZDOTDIR/.zshrc_`uname` ]; then . $ZDOTDIR/.zshrc_`uname`; fi
-if [ -f $ZDOTDIR/.zshrc_$OSTYPE ]; then . $ZDOTDIR/.zshrc_$OSTYPE; fi
-if [ -f $ZDOTDIR/.zshrc_local.Kubo-MBPR ]; then . $ZDOTDIR/.zshrc_local.Kubo-MBPR; fi
+if [[ -f ${ZDOTDIR}/.${OSTYPE}.zshrc ]]; then . ${ZDOTDIR}/.${OSTYPE}.zshrc; fi
+if [[ -f ${ZDOTDIR}/.`uname`.zshrc ]]; then . ${ZDOTDIR}/.`uname`.zshrc; fi
+if [[ -f ${ZDOTDIR}/.`uname -n`.zshrc ]]; then . ${ZDOTDIR}/.`uname -n`.zshrc; fi
 
 
 # ls Color
-if [[ -f $ZDOTDIR/dircolors-solarized/dircolors.ansi-dark && -x `which dircolors` ]]; then
-    eval `dircolors $ZDOTDIR/dircolors-solarized/dircolors.ansi-dark`
+if [[ -f ${ZDOTDIR}/dircolors-solarized/dircolors.ansi-dark && -x `which dircolors` ]]; then
+    eval `dircolors ${ZDOTDIR}/dircolors-solarized/dircolors.ansi-dark`
     zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 fi

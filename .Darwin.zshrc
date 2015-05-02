@@ -3,9 +3,9 @@ export PATH=~/local/bin:/usr/local/bin:/usr/local/sbin:/opt/X11/bin:/usr/bin:/us
 
 
 # ls
-if [ -d /usr/local/opt/coreutils/libexec/gnubin ]; then
-    export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
-    export MANPATH=/usr/local/opt/coreutils/libexec/gnuman:$MANPATH
+if [[ -d /usr/local/opt/coreutils/libexec/gnubin ]]; then
+    export PATH=/usr/local/opt/coreutils/libexec/gnubin:${PATH}
+    export MANPATH=/usr/local/opt/coreutils/libexec/gnuman:${MANPATH}
     alias ls="ls --color=auto"
 else
     export LSCOLORS=gxfxcxdxbxegedabagacad
