@@ -1,2 +1,2 @@
 # Path
-export PATH=~/Library/TeXShop/bin:/usr/texbin:${PATH}
+export PATH=~/Library/TeXShop/bin:${PATH}
