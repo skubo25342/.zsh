@@ -1,5 +1,5 @@
 # Path
-export PATH=~/local/bin:/usr/local/bin:/usr/local/sbin:/opt/X11/bin:/usr/bin:/usr/sbin:/bin:/sbin
+export PATH=/usr/texbin:~/local/bin:${PATH}
 
 
 # ls
