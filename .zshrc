@@ -4,7 +4,7 @@ export LANG=ja_JP.UTF-8
 
 # Terminal title
 case "${TERM}" in
-    kterm*|xterm*|)
+    kterm* | xterm* )
     precmd() {
         echo -ne "\033]0;${USER}@${HOST%%.*}\007"
     }
