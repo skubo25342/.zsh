@@ -2,6 +2,10 @@
 export LANG=ja_JP.UTF-8
 
 
+# Paths
+export PATH=${HOME}/local/bin:${PATH}
+
+
 # Terminal title
 case "${TERM}" in
     kterm* | xterm* )

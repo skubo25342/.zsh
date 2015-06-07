@@ -1,5 +1,5 @@
 # Path
-export PATH=/cygdrive/c/dviout:~/local/bin:${PATH}
+export PATH=/cygdrive/c/dviout:${PATH}
 
 
 # Aliases
