@@ -1,5 +1,5 @@
 # Path
-export PATH=/usr/texbin:~/Library/Python/$(python3 --version 2>&1 | sed -E "s/Python (.*)\..*/\1/g")/bin:${PATH}
+export PATH=/usr/texbin:${PATH}
 
 
 # ls
